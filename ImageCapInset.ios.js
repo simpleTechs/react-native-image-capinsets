@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  Image,
   ImageBackground
 } from 'react-native';
 
@@ -14,7 +13,7 @@ class ImageCapInset extends Component {
     return (
       <ImageBackground
         {...this.props}
-        resizeMode={Image.resizeMode.stretch}
+        resizeMode='stretch'
       />
     );
   }
