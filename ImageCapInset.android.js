@@ -31,8 +31,6 @@ class ImageCapInset extends Component {
   }
 }
 
-const RCTImageCapInset = requireNativeComponent('RCTImageCapInset', {
-  propTypes: ImageCapInset.propTypes,
-});
+const RCTImageCapInset = requireNativeComponent('RCTImageCapInset', {});
 
 export default ImageCapInset;
