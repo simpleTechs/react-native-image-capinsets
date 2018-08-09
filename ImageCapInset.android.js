@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   View,
-  Image,
   requireNativeComponent,
 } from 'react-native';
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
@@ -24,24 +23,13 @@ class ImageCapInset extends Component {
           style={{position: 'absolute', top: 0, left: 0, bottom: 0, right: 0}}
           capInsets={capInsets}
           source={normalizedSource}
-          resizeMode={Image.resizeMode.stretch}
+          resizeMode='stretch'
         />
         {children}
       </View>
     );
   }
 }
-
-ImageCapInset.propTypes = {
-  ...View.propTypes,
-  source: Image.propTypes.source,
-  capInsets: PropTypes.shape({
-    top: PropTypes.number,
-    left: PropTypes.number,
-    right: PropTypes.number,
-    bottom: PropTypes.number,
-  }),
-};
 
 const RCTImageCapInset = requireNativeComponent('RCTImageCapInset', {
   propTypes: ImageCapInset.propTypes,
