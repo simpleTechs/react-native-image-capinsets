@@ -30,6 +30,10 @@ public class RCTImageCapInsetView extends ImageView {
     }
 
     public void reload() {
+        if(this.mUri == null) {
+            // since RN 0.60, the capInset might be set before setting the source. avoid reloads in that case
+            return;
+        }
         final String key = mUri + "-" + mCapInsets.toShortString();
         final RCTImageCache cache = RCTImageCache.getInstance();
 
